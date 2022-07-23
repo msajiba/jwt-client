@@ -11,6 +11,7 @@ const Login = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [accessToken, setAccessToken] = useState('');
 
     const [
         signInWithEmailAndPassword,
@@ -29,15 +30,17 @@ const Login = () => {
 
         const url = 'https://desolate-dusk-49615.herokuapp.com/login';
 
-        if(user){
             const {data} = await axios.post(url, {email})
             if(data.accessToken){
-                localStorage.setItem('accessToken', data.accessToken);
+                setAccessToken(data.accessToken);
             }
             console.log(data);
-        }
+        
     }
     
+    if(user){
+        localStorage.setItem('accessToken', accessToken);
+    }
 
     return (
         <>

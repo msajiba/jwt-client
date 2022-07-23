@@ -14,7 +14,7 @@ const Order = () => {
 
         const getOrders = async() => {
             
-            const url = 'https://desolate-dusk-49615.herokuapp.com/products';
+            const url = 'http://localhost:5000/products';
 
            if(user){
                 try{
