@@ -27,7 +27,7 @@ const Login = () => {
         e.preventDefault();
         await signInWithEmailAndPassword(email, password);
 
-        const url = 'http://localhost:5000/login';
+        const url = 'https://desolate-dusk-49615.herokuapp.com/login';
 
         if(user){
             const {data} = await axios.post(url, {email})
